@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://www.gstatic.com/firebasejs/8.7.0/firebase.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <label>RollNo:</label><input type="text" id='rollno'><br>
+    <label>Username:</label><input type="text" id='username'><br>
+    <label>Branch:</label><input type="text" id='branch'><br>
+    <input type="button" value="Add User" onclick="insert()">
+    <input type="button" value="UpdateUser" onclick="update()">
+    <input type="button" value="Display" onclick="display()">
+    <div id="table"></div>
+</body>
+</html>
