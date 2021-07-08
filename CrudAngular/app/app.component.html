@@ -1,0 +1,35 @@
+<h1 (click)='getStudents()'>
+    Display Table
+</h1>
+
+<table border='1'>
+    <thead>
+      <tr>
+        <td> Sno </td>
+        <td> Username </td>
+        <td> RollNo </td>
+        <td> Branch </td>
+        <td> Delete </td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let stud of students;let i=index">
+        <td> {{i+1}} </td>
+        <td> {{stud.username}} </td>
+        <td> {{stud.id}} </td>
+        <td> {{stud.branch}} </td>
+        <td> <button id={{i}} (click)='delete(stud)'>delete</button> </td>
+      </tr>
+    </tbody>
+</table>
+
+<small (click)="addStudent()"> Do u want to add Student</small>
+<div *ngIf="addStud">
+  <form [formGroup]="studentForm" (ngSubmit)="addStudents()">
+    Username : <input type="text" formControlName="username"> <br>
+    RollNo : <input type="text" formControlName="id"> <br>
+    Branch : <input type="text" formControlName="branch"> <br>
+    <button type="submit">Submit</button>
+  </form>
+  <button (click)="update()">update</button>
+</div>
